@@ -32,7 +32,7 @@ tmp         = File.join(td, "phantomjs-#{node.phantomjs.version}.tar.gz")
 tarball_dir = File.join(td, "phantomjs-#{node.phantomjs.version}-linux-#{node.phantomjs.arch}")
 
 remote_file(tmp) do
-  source node.phantomjs.tarball.url
+  source "http://phantomjs.googlecode.com/files/phantomjs-#{node.phantomjs.version}-linux-#{node.phantomjs.arch}.tar.bz2"
 
   not_if "which phantomjs && [[ `phantomjs --version` == \"#{node.phantomjs.version}\" ]]"
 end
